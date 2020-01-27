@@ -15,7 +15,7 @@
 <div class="jumbotron text-center">
     <div class="row">
         <div class="col-xl-12">
-            <h1>Edycja zdjęcia</h1>
+            <h1>Projekt 3 - Canvas</h1>
             <canvas id="imageCanvas"></canvas>
             <br>
             <input type="file" id="imageLoader" name="imageLoader"/>
@@ -28,6 +28,7 @@
                             <div class="col-xl-12 text-center main_info">
                                 <h2>Edycja filtrów</h2>
                             </div>
+
                             <div class="col-xl-12 text-center secondary_info">
                                 <h3>Wybór filtrów</h3>
                             </div>
@@ -53,13 +54,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-4 text-center" style="margin-right: 10%">
+
+                            <div class="col-xs-4 text-center" style="margin-right: 1%">
                                 <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input id="filter4checkbox" type="checkbox" class="form-check-input"
                                                    value=""
-                                                   onchange="filter3()">Ramka
+                                                   onchange="filter4()">Ramka
                                         </label>
                                     </div>
                                 </div>
@@ -76,19 +78,6 @@
                                 </div>
                             </div>
                             <div class="col-xl-12 text-center secondary_info">
-                                <h3>Przezroczytość</h3>
-                            </div>
-                            <div class="col-xl-12 text-center">
-                                <div class="form-group">
-                                    <label for="filterOpacity" class="slidecontainer">
-                                        <input id="filterOpacity" type="range" min="0" max="100" value="100"
-                                               class="slider" onchange="applyFilter()"
-                                               oninput="showFilterValue(filterOpacity,filterOpacityValueField)">
-                                    </label>
-                                    <p>Wartość: <span id="filterOpacityValue">100</span></p>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 text-center secondary_info">
                                 <h3>Odległość ramki od rogów</h3>
                             </div>
                             <div class="col-xl-12 text-center">
@@ -101,8 +90,23 @@
                                     <p>Wartość: <span id="filterSpaceValue">20</span></p>
                                 </div>
                             </div>
+                            <div class="col-xl-12 text-center secondary_info">
+                                <h3>Przezroczytość</h3>
+                            </div>
+                            <div class="col-xl-12 text-center">
+                                <div class="form-group">
+                                    <label for="filterOpacity" class="slidecontainer">
+                                        <input id="filterOpacity" type="range" min="0" max="100" value="100"
+                                               class="slider" onchange="applyFilter()"
+                                               oninput="showFilterValue(filterOpacity,filterOpacityValueField)">
+                                    </label>
+                                    <p>Wartość: <span id="filterOpacityValue">100</span></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
+
                     <div class="col-xl-6">
                         <div class="row" id="photos_row">
                             <div class="col-xl-12 text-center main_info">
@@ -125,16 +129,25 @@
                             <div class="col-xl-12 text-center secondary_info">
                                 <h3>Kolory zdjęcia</h3>
                             </div>
-                            <div class="col-xl-12 text-center">
+                            <div class="col-xl-6 text-center">
                                 <div class="form-group">
                                     <label for="photoColorEditor" class="slidecontainer">
                                         <input type="checkbox" class="form-check-input" id="photoColorEditor">
-                                        Edytować kolory zdjęcia?
+                                        Edycja koloru zdjęcia
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 text-center">
+                                <div class="form-group">
+                                    <label for="photoGrayness" class="slidecontainer">
+                                        <input type="checkbox" class="form-check-input" id="photoGrayness"
+                                               onchange="applyPhotoFilter(photoGrayness)">
+                                       Ustawienie skali szarości
                                     </label>
                                 </div>
                             </div>
                             <div class="col-xl-12 text-center secondary_info">
-                                <h3>Przezroczystość zdjęcia</h3>
+                                <h3>Przezroczystość</h3>
                             </div>
                             <div class="col-xl-12 text-center">
                                 <div class="form-group">
